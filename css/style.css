@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+@font-face {/* fuente a utilizar en toda la pagina */ 
+    font-family: Helvetica;
+    src: url('../fonts/Helvetica.woff');
+}
+
+*{    
+    font-family: Helvetica;/* asignar la fuente a todas las etiquetas */ 
+    margin: 0%;/* quitar margen a todo */ 
+}
+
+/* estilo de los titulos principales*/ 
+h1{
+    color: rgb(46, 33, 25);
+    text-align: center;
+    font-size: 120px;
+}
+
+/* estilo de los titulos secundarios */ 
+h2{
+    color: rgb(46, 33, 25);
+    text-align: left;
+    font-size: 65px;
+}
+
+/* estilo de la imagen "banner" que aparce en todas las paginas */ 
+.front{
+    display: block;
+    max-width: 100%;    
+}
+
+/* estilo de los parrafos usados */ 
+p{
+    text-align: justify;
+    font-size: 125%;
+    line-Height: 45px;
+}
+
+/* estilo del bloque que tiene el contenido principal de una pagina */ 
+.container{
+    width: 780px; /* margenes  a los lados para que el texto no se extienda mucho hacia los bordes y sea facil de leer */ 
+    margin: auto;
+    text-align: center;    
+}
+
+/* estilo de las imagenes pequeñas junto a texto*/ 
+.img_mini{    
+    float: right; 
+    margin: 10px;
+    width: 240px;
+}
+/* estilo de las imagenes pequeñas de personajes*/ 
+.img_mini.L{
+    border-radius: 25px 75px 25px 75px;     /* bordes redondeados de las imagenes de los personajes */
+    float: left; 
+    width: 340px;
+}
+/* estilo de una imagen separadora de contenido*/ 
+.img_sep{
+    margin: 10px;
+    max-width: 780px;
+}
+
+/* estilo del menu de navegacion*/ 
+nav ul {
+    display: flex; 
+    justify-content: space-around; /* la lista del menu ocupa todo el espacio que tiene disponible*/ 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;    
+    background-color: #5d001e;
+    position: fixed; /* el menu siempre esta en pantalla */ 
+    top: 0;
+    width: 100%;
+}
+ul.menu li{
+    flex: auto;
+    float: left;
+}
+ul.menu li.active{
+    background-color: #9a1750;/* cambia el color de la pestaña en la que se encuentra actualmente*/ 
+    color: #e3e2df;
+}
+  
+ul.menu li a {
+    flex: auto;
+    display: block;
+    color: #e3e2df;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* cambia el color de la pestaña en la que se encuentra debajo del mouse */
+ul.menu li a:hover {
+    background-color: #9a1750;
+    color: #e3e2df;
+}
+
+/* estilo del menu interno de navegacion de una pagina */
+ul.mini_menu{
+    text-align: left;
+    color: rgb(46, 33, 25);
+}
+
+ul.mini_menu a{
+    color: rgb(46, 33, 25);
+    line-Height: 45px;
+    font-size: 125%;
+}
+
+.creditos {
+    margin-left: auto;
+}
+
+footer {
+    background-color: #5d001e;
+    color: #e3e2df;
+    margin-bottom: 0;
+}
+
+footer p{
+    font-size: 95%;
+    margin-left: 10%
+}
+
+/* Configuracion para 780 , reducir las imagenes y quitar el espacio alrededor del texto*/
+@media all and (max-width: 780px) { 
+    .container{
+        width: 100%; 
+        margin: auto;
+        text-align: center;
+    }
+    .img_sep{
+        width: 100%; 
+    }
+    h1{
+        font-size: 80px;
+    }
+    .img_mini{
+        width: 200px;
+    }
+  }
+/* Configuracion para 480 cambiar el interlineado del texto y los tamaños aun mas reducidos*/
+@media all and (max-width: 480px){
+    
+    p{
+        text-align: start;
+        font-size: 95%;
+        line-Height: 25px;
+    }
+    h1{
+        font-size: 60px;
+    }
+    ul.menu{
+        font-size: 10px;
+    }
+    .img_sep{
+        display: block;
+    }
+    h2{
+        color: rgb(46, 33, 25);
+        text-align: left;
+        font-size: 35px;
+    }
+    .container{
+        width: 100%; 
+        margin: auto;
+    }
+    .img_mini{
+        width: 180px;
+    }    
+}
+
